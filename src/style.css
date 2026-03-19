@@ -4,22 +4,40 @@
     box-sizing: border-box;
 }
 
+/* Garantia total de largura */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo */
 body {
     background-image: url("camuflagemFundo.jpg");
     background-size: cover;
     background-position: center;
-    font-family: Arial, Helvetica, sans-serif;
+    background-attachment: fixed;
+
+    /* Espaço pro footer fixo */
+    padding-bottom: 60px;
 }
 
-/* Título */
+/* HEADER estilo sistema */
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #556B2F;
+}
+
 h1 {
     text-align: center;
-    color: white;
+    color: #00FF7F;
     padding: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
 
-/* Container da tabela (ESSENCIAL para responsividade) */
+/* Container da tabela */
 .table-container {
     width: 100%;
     overflow-x: auto;
@@ -29,9 +47,9 @@ h1 {
 /* Tabela */
 table {
     width: 100%;
-    min-width: 600px; /* evita quebrar no celular */
+    min-width: 700px;
     border-collapse: collapse;
-    background-color: #2F4F4F;
+    background-color: rgba(47, 79, 79, 0.95);
     color: #F5F5F5;
     text-align: center;
 }
@@ -41,6 +59,7 @@ th {
     background-color: #556B2F;
     padding: 10px;
     font-size: 0.9rem;
+    border: 1px solid black;
 }
 
 /* Células */
@@ -50,33 +69,58 @@ td {
     font-size: 0.85rem;
 }
 
-/* Cores */
-.sim {
-    background-color: green;
+/* Status */
+.desejaA,
+.desejaB {
+    background-color: #006400;
+    font-weight: bold;
 }
 
 .nao {
-    background-color: red;
+    background-color: #8B0000;
+    font-weight: bold;
 }
 
-/* Footer */
+/* Hover estilo sistema */
+tr:hover {
+    background-color: rgba(0, 255, 127, 0.2);
+    transition: 0.2s;
+}
+
+/* FOOTER FIXO (tipo app) */
 footer {
-    background-color: black;
-    color: white;
-    font-size: 0.9rem;
-    padding: 10px;
-    text-align: center;
-    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 50px;
+
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #00FF7F;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.85rem;
+    border-top: 2px solid #556B2F;
 }
 
-/* 📱 Ajustes para celular */
+/* 📱 Mobile */
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        padding: 10px;
     }
 
     th, td {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         padding: 6px;
+    }
+
+    footer {
+        font-size: 0.75rem;
+        height: 45px;
     }
 }
