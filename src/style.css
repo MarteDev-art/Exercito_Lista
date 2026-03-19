@@ -1,43 +1,82 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-image: url("camuflagemFundo.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Título */
 h1 {
     text-align: center;
-    margin: auto;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1px 1px black;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+/* Container da tabela (ESSENCIAL para responsividade) */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
     padding: 10px;
-    margin: 5px;
 }
+
+/* Tabela */
 table {
-    margin: auto;
+    width: 100%;
+    min-width: 600px; /* evita quebrar no celular */
+    border-collapse: collapse;
+    background-color: #2F4F4F;
+    color: #F5F5F5;
+    text-align: center;
 }
+
+/* Cabeçalho */
+th {
+    background-color: #556B2F;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Células */
 td {
-    border: 2px solid black;
+    border: 1px solid black;
+    padding: 8px;
+    font-size: 0.85rem;
 }
-.desejaB  {
+
+/* Cores */
+.sim {
     background-color: green;
 }
-.desejaA {
-     background-color: green;
-}
-.Não {
+
+.nao {
     background-color: red;
 }
+
+/* Footer */
 footer {
     background-color: black;
     color: white;
-    font-size: 15px;
-    margin: auto;
+    font-size: 0.9rem;
     padding: 10px;
     text-align: center;
+    margin-top: 20px;
+}
+
+/* 📱 Ajustes para celular */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    th, td {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
 }
